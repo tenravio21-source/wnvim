@@ -4,6 +4,7 @@ return {
 		cmd = { "ToggleTerm", "TermExec" },
 		config = function()
 			require("toggleterm").setup({
+				shell = "pwsh",
 				start_in_insert = true,
 				insert_mappings = true,
 				close_on_exit = true,
