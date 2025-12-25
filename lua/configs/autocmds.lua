@@ -1,6 +1,20 @@
+local theme = vim.env.NVIM_THEME or "dark"
+
 if vim.g.colors_name == nil then
-	vim.cmd("colorscheme catppuccin")
+	if theme == "light" then
+		vim.opt.background = "light"
+		vim.cmd.colorscheme("cyberdream-light")
+	elseif theme == "day" then
+		vim.cmd.colorscheme("tokyonight-day")
+	else
+		vim.opt.background = "dark"
+		vim.cmd.colorscheme("catppuccin-mocha")
+	end
 end
+
+-- if vim.g.colors_name == nil then
+-- 	vim.cmd("colorscheme catppuccin")
+-- end
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	group = vim.api.nvim_create_augroup("no_auto_comment", { clear = true }),
