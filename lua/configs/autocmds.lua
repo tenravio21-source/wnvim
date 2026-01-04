@@ -3,7 +3,7 @@ local theme = vim.env.NVIM_THEME or "dark"
 if vim.g.colors_name == nil then
 	if theme == "light" then
 		vim.opt.background = "light"
-		vim.cmd.colorscheme("cyberdream-light")
+		vim.cmd.colorscheme("catppuccin-latte")
 	elseif theme == "day" then
 		vim.cmd.colorscheme("tokyonight-day")
 	else
