@@ -1,5 +1,6 @@
 return {
 	"saghen/blink.indent",
+	version = "*",
 	dependencies = {
 		"saghen/blink.download",
 	},
@@ -19,7 +20,6 @@ return {
 					"notify",
 					"toggleterm",
 					"lazyterm",
-					"alpha",
 				},
 			},
 			-- mappings = {

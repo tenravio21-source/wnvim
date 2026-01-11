@@ -1,11 +1,9 @@
--- File: lua/core/lsp/servers.lua
-
 local M = {
 	"lua_ls",
 	"dartls",
-	"gopls",
-	"pyright",
+	"pyrefly",
 	"rust_analyzer",
+	"gopls",
 }
 
 return M

@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	event = "InsertEnter",
+	event = { "BufReadPre", "BufNewFile" },
 	version = "v0.*",
 	dependencies = {
 		{ "saghen/blink.compat", opts = { enable_events = true } },
@@ -14,6 +14,7 @@ return {
 		},
 		{
 			"L3MON4D3/LuaSnip",
+			build = "make install_jsregexp",
 			event = "InsertEnter",
 			dependencies = { "rafamadriz/friendly-snippets" },
 			opts = {},

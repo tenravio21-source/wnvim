@@ -1,5 +1,3 @@
--- File: lua/core/noice/config.lua
-
 local M = {
 	cmdline = {
 		enabled = true,

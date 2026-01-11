@@ -1,5 +1,3 @@
--- File: lua/core/telescope/init.lua
-
 local config = require("core.telescope.config")
 local extensions = require("core.telescope.extensions")
 local mappings = require("core.telescope.mappings")
@@ -15,15 +13,13 @@ function M.setup()
 		sort_lastused = config.sort_lastused,
 		ignore_current_buffer = config.ignore_current_buffer,
 		pickers = config.pickers,
-		extensions = {
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown({}),
-			},
-		},
+		extensions = config.extensions,
 		defaults = vim.tbl_deep_extend("force", config.defaults, { mappings = mappings }),
 	})
 
 	-- Load extensions
+	telescope.load_extension("ui-select")
+
 	extensions.setup(telescope)
 end
 

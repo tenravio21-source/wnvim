@@ -1,20 +1,6 @@
-local theme = vim.env.NVIM_THEME or "dark"
-
 if vim.g.colors_name == nil then
-	if theme == "light" then
-		vim.opt.background = "light"
-		vim.cmd.colorscheme("catppuccin-latte")
-	elseif theme == "day" then
-		vim.cmd.colorscheme("tokyonight-day")
-	else
-		vim.opt.background = "dark"
-		vim.cmd.colorscheme("catppuccin-mocha")
-	end
+	vim.cmd("colorscheme gruvbox")
 end
-
--- if vim.g.colors_name == nil then
--- 	vim.cmd("colorscheme catppuccin")
--- end
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	group = vim.api.nvim_create_augroup("no_auto_comment", { clear = true }),
@@ -203,13 +189,14 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
 })
 
 vim.api.nvim_create_user_command("ToggleContrast", function()
-	local current = vim.g.high_contrast or false
-	if current then
-		vim.cmd("colorscheme catppuccin")
-		vim.g.high_contrast = false
+	if vim.g.gruvbox_contrast_dark == "hard" then
+		vim.g.gruvbox_contrast_dark = "medium"
+		print("Contrast: Medium")
 	else
-		vim.cmd("hi Normal guibg=#000000 guifg=#ffffff")
-		vim.cmd("hi Comment guifg=#888888")
-		vim.g.high_contrast = true
+		vim.g.gruvbox_contrast_dark = "hard"
+		print("Contrast: Hard")
 	end
+	vim.cmd("colorscheme gruvbox")
 end, {})
+
+vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Comment" })

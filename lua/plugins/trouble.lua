@@ -1,3 +1,5 @@
+-- File: lua/plugins/trouble.lua
+
 local mappings = require("core.trouble.mappings")
 
 return {

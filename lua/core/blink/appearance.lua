@@ -1,5 +1,6 @@
 return {
 	kind_icons = {
+		Codeium = "",
 		Text = "",
 		Method = "󰆧",
 		Function = "󰊕",

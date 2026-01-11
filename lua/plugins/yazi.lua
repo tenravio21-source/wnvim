@@ -30,6 +30,7 @@ return {
 		floating_window_border = "rounded",
 		keymaps = {
 			show_help = "<f1>",
+			grep_in_directory = "<c-s>",
 		},
 	},
 }

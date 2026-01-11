@@ -6,10 +6,6 @@ local lsp_map = util.safe_map
 lsp_map("n", "<leader>ld", vim.lsp.buf.definition, "Go to Definition")
 lsp_map("n", "gd", vim.lsp.buf.definition, "Go to Definition (Quick)")
 
--- Go to Declaration
-lsp_map("n", "<leader>lD", vim.lsp.buf.declaration, "Go to Declaration")
-lsp_map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration (Quick)")
-
 -- Go to Type Definition
 lsp_map("n", "<leader>lt", vim.lsp.buf.type_definition, "Go to Type Definition")
 

@@ -1,5 +1,3 @@
--- File: lua/core/telescope/config.lua
-
 local M = {
 	sort_mru = true,
 	sort_lastused = true,
@@ -7,7 +5,18 @@ local M = {
 	pickers = {
 		buffers = { sort_lastused = true },
 	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({}),
+		},
+	},
 	defaults = {
+		border = true,
+		borderchars = {
+			prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			results = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		},
 		initial_mode = "insert",
 		prompt_prefix = "   ",
 		selection_caret = "  ",

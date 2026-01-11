@@ -1,5 +1,3 @@
--- File: lua/core/neo-tree/mappings.lua
-
 local M = {
 	["q"] = "close_window",
 	["?"] = "noop",
@@ -19,9 +17,9 @@ local M = {
 	["<C-p>"] = "paste_from_clipboard",
 	-- View controls
 	["R"] = "refresh",
-	["H"] = "toggle_hidden",
-	["/"] = "fuzzy_finder",
-	["#"] = "fuzzy_sorter",
+	-- ["H"] = "toggle_hidden",
+	-- ["/"] = "fuzzy_finder",
+	-- ["#"] = "fuzzy_sorter",
 	-- Navigation
 	["<"] = "prev_source",
 	[">"] = "next_source",

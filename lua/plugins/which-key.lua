@@ -1,7 +1,8 @@
 return {
 	"folke/which-key.nvim",
-	event = "VimEnter",
+	event = "VeryLazy",
 	opts = {
+		timeout = 500,
 		win = {
 			border = "rounded",
 			padding = { 1, 2, 1, 2 },

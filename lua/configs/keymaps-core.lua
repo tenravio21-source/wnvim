@@ -35,6 +35,10 @@ basic_map("i", "jk", "<ESC>", "Exit Insert Mode")
 -- Clear search highlights with ESC
 basic_map("n", "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
 
+--Search
+basic_map("n", "n", "nzzzv", "Next Search Result (Centered)")
+basic_map("n", "N", "Nzzzv", "Prev Search Result (Centered)")
+
 -- ## 🖼️ Window Management
 basic_map("n", "<leader>-", "<C-W>s", "Split Window Below")
 basic_map("n", "<leader>|", "<C-W>v", "Split Window Right")

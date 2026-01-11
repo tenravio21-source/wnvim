@@ -8,6 +8,11 @@ local builtin = require("telescope.builtin")
 -- Find Files
 safe_map("n", "<leader>ff", builtin.find_files, "Find Files")
 
+-- Find Notifications (History)
+safe_map("n", "<leader>fu", function()
+	require("telescope").extensions.notify.notify()
+end, "Find Notifications (History)")
+
 -- Smart Open Files (requires Telescope Smart Open extension)
 safe_map("n", "<leader>fF", function()
 	-- Assuming Telescope is loaded and extension is available
@@ -78,13 +83,13 @@ safe_map("n", "<leader>*", function()
 	return builtin.grep_string({ search = vim.fn.expand("<cword>") })
 end, "Search Word Under Cursor")
 
--- Search Visual Selection (IMPROVED RELIABILITY)
-safe_map("v", "<leader>*", function()
-	-- Uses the black hole register to reliably get the visually selected text
-	local text = vim.fn.getreg('"')
-	if #text == 0 then
-		vim.notify("No text visually selected", vim.log.levels.WARN)
-		return
+-- Search Visual Selection (Safe & Reliable)
+safe_map("v", "<leader>fv", function()
+	local function get_visual_selection()
+		vim.cmd('noau normal! "vy')
+		local text = vim.fn.getreg("v")
+		vim.fn.setreg("v", {})
+		return text
 	end
-	return builtin.grep_string({ search = text })
+	builtin.grep_string({ search = get_visual_selection() })
 end, "Search Visual Selection")

@@ -1,13 +1,13 @@
 return {
 	"catppuccin/nvim",
-	priority = 1000,
-	lazy = false,
+	-- priority = 1000,
+	lazy = true,
 	name = "catppuccin",
 	opts = {
-		transparent_background = true,
-		flavour = "mocha", -- latte, frappe, macchiato, mocha
+		transparent_background = false,
+		flavour = "macchiato", -- latte, frappe, macchiato, mocha
 		background = { -- :h background
-			dark = "mocha",
+			dark = "macchiato",
 		},
 		float = {
 			transparent = true, -- enable transparent floating windows
