@@ -44,6 +44,16 @@ return {
 		opts = {
 			preset = "modern",
 			transparent_bg = true,
+			add_messages = {
+				display_count = true,
+			},
+			multilines = {
+				enabled = true,
+				always_show = true,
+			},
+			show_source = {
+				enabled = true,
+			},
 		},
 	},
 }
