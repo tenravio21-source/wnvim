@@ -22,6 +22,8 @@
   },
   "theme_overrides": {
     "Aura Dark": {
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
       "border.variant": "#15141C",
       "border": "#15141C",
       "title_bar.background": "#15141C",
@@ -119,8 +121,30 @@
   "minimap": {
     "show": "never",
   },
-  "format_on_save": "on",
+  "agent_buffer_font_size": 17,
+  "cursor_blink": false,
+  "cursor_shape": "bar",
+  "multi_cursor_modifier": "alt",
+  "selection_highlight": false,
+  "current_line_highlight": "none",
+  "drag_and_drop_selection": {
+    "enabled": false
+  },
+  "seed_search_query_from_cursor": "never",
+  "show_whitespaces": "none",
+  "tab_size": 2,
+  "auto_indent_on_paste": false,
+  "format_on_save": "off",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    }
+  },
   "formatter": "language_server",
+  "show_completions_on_input": false,
+  "show_completion_documentation": true,
+  "inline_code_actions": false,
+  "lsp_document_colors": "border",
   "lsp": {
     "dart": {
       "binary": {
@@ -145,3 +169,4 @@
     },
   },
 }
+
