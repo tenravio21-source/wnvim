@@ -4,6 +4,14 @@
       "colorize_brackets": true
     }
   },
+  "terminal": {
+    "cursor_shape": "bar",
+    "font_size": 17.0,
+    "font_family": "Maple Mono NF",
+    "copy_on_select": true,
+    "default_height": 460,
+    "scrollbar": null
+  },
   "buffer_font_family": "Maple Mono NF",
   "icon_theme": "Warm Charmed Icons",
   "ui_font_size": 17.0,
