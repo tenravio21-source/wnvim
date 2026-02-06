@@ -20,3 +20,9 @@ basic_map("n", "<leader>Fd", "<cmd>FlutterDevices<CR>", "Flutter Devices")
 basic_map("n", "<leader>Fe", "<cmd>FlutterEmulators<CR>", "Flutter Emulators")
 basic_map("n", "<leader>Fc", "<cmd>FlutterToggleDeviceLog<CR>", "Flutter Toggle Device Log")
 basic_map("n", "<leader>Fo", "<cmd>FlutterOutlineToggle<CR>", "Flutter Outline Toggle")
+
+--Atone
+basic_map("n", "<leader>uu", "<cmd>Atone<CR>", "Atone")
+basic_map("n", "<leader>ua", "<cmd>Atone toggle<CR>", "Atone Toggle")
+basic_map("n", "<leader>uq", "<cmd>Atone close<CR>", "Atone Close")
+basic_map("n", "<leader>uf", "<cmd>Atone focus<CR>", "Atone Focus")
