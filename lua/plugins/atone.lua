@@ -1,5 +1,9 @@
 return {
 	"XXiaoA/atone.nvim",
 	cmd = "Atone",
-	opts = {}, -- your configuration here
+	opts = {
+		ui = {
+			border = "rounded",
+		},
+	},
 }
