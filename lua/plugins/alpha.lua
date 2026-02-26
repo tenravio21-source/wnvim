@@ -1,6 +1,9 @@
 return {
 	"goolord/alpha-nvim",
+	lazy = true,
 	event = "VimEnter",
+	enabled = true,
+	init = false,
 	config = function()
 		if vim.fn.argc() > 0 then
 			return

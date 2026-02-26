@@ -11,19 +11,15 @@ M.active = {
 		{ "branch", icon = " ", separator = { left = "", right = "" }, padding = { left = 1, right = 1 } },
 		{
 			function()
-				local msg = "No LSP"
-				local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-				local clients = vim.lsp.get_clients({ bufnr = 0 })
-				if next(clients) == nil then
-					return msg
+				local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
+				if #buf_clients == 0 then
+					return "No LSP"
 				end
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						return client.name
-					end
+				local client_names = {}
+				for _, client in ipairs(buf_clients) do
+					table.insert(client_names, client.name)
 				end
-				return msg
+				return table.concat(client_names, ", ")
 			end,
 			icon = " ",
 			color = { gui = "bold" },
@@ -69,25 +65,25 @@ M.active = {
 	},
 }
 
--- M.winbar = {
--- 	lualine_b = {
--- 		{
--- 			"filename",
--- 			path = 1,
--- 			symbols = { modified = " ", readonly = " ", unnamed = "[No Name]" },
--- 			padding = { left = 1, right = 1 },
--- 		},
--- 	},
--- }
---
--- M.inactive_winbar = {
--- 	lualine_b = {
--- 		{
--- 			"filename",
--- 			path = 1,
--- 			padding = { left = 1, right = 1 },
--- 		},
--- 	},
--- }
---
+M.winbar = {
+	lualine_a = {
+		{
+			"filename",
+			path = 1,
+			symbols = { modified = " ", readonly = " ", unnamed = "[No Name]" },
+			color = { gui = "bold" },
+		},
+	},
+	lualine_c = {
+		{
+			function()
+				return require("nvim-navic").get_location()
+			end,
+			cond = function()
+				return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+			end,
+		},
+	},
+}
+
 return M

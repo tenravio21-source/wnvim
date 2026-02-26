@@ -7,7 +7,11 @@ basic_map("n", "<leader>h", "<cmd>Alpha<CR>", "Alpha")
 basic_map("n", ";", ":", "Esc")
 
 -- Reload nvim (LINE 8/9 area)
-basic_map("n", "<leader>ur", "<Cmd>update<CR><Cmd>source<CR>", "Reload nvim")
+safe_map("n", "<leader>ur", function()
+	vim.cmd("write")
+	vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+	vim.notify("Config Reloaded!", vim.log.levels.INFO)
+end, "Reload nvim")
 
 safe_map("n", "<leader>ut", function()
 	require("telescope.builtin").colorscheme({
@@ -19,8 +23,7 @@ safe_map("n", "<leader>ut", function()
 		},
 		ignore_builtins = true,
 	})
-end, "Telescope: Colorscheme Picker (Live Preview)")
-
+end, "Telescope: Colorscheme Picker")
 -- Show Lazy logs
 basic_map("n", "<leader>pl", "<cmd>Lazy log<CR>", "Show Lazy logs")
 
@@ -55,8 +58,7 @@ end, "Copy current file directory")
 
 -- ... (rest of the code) ...
 -- Quick access to important files
-local builtin = require("telescope.builtin")
 -- Using safe_map here just in case Telescope is not loaded, though basic_map is also sufficient.
 safe_map("n", "<leader>fN", function()
-	builtin.find_files({ cwd = "~/.config/nvim" })
+	require("telescope.builtin").find_files({ cwd = "~/.config/nvim" })
 end, "Edit Neovim Config (Telescope)")

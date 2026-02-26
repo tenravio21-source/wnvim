@@ -15,18 +15,28 @@ return {
 	},
 	{
 		"scottmckendry/cyberdream.nvim",
-		lazy = true,
+		event = "VeryLazy",
+		priority = 1000,
 		opts = {
 			variant = "auto",
-			transparent = false,
+			transparent = true,
 			italic_comments = true,
 			borderless_pickers = false,
 			terminal_colors = true,
 			cache = false,
 			extensions = {
 				telescope = true,
+				alpha = true,
+				blinkcmp = true,
 				notify = true,
 				mini = true,
+				indentblankline = true,
+				lazy = true,
+				noice = true,
+				treesitter = true,
+				treesittercontext = true,
+				trouble = true,
+				whichkey = true,
 				...,
 			},
 			highlights = {
@@ -36,6 +46,7 @@ return {
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
+		lazy = true,
 		config = true,
 		opts = {
 			terminal_colors = true, -- add neovim terminal colors
@@ -65,6 +76,7 @@ return {
 	},
 	{
 		"olimorris/onedarkpro.nvim",
+		lazy = true,
 		opts = {
 			options = {
 				transparency = false,

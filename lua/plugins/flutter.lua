@@ -5,6 +5,17 @@ return {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim",
 	},
+	-- Mappings grouped under <leader>F
+	keys = {
+		{ "<leader>Ff", "<cmd>FlutterRun<CR>", desc = "Flutter Run" },
+		{ "<leader>Fq", "<cmd>FlutterQuit<CR>", desc = "Flutter Quit" },
+		{ "<leader>Fr", "<cmd>FlutterReload<CR>", desc = "Flutter Hot Reload" },
+		{ "<leader>FR", "<cmd>FlutterRestart<CR>", desc = "Flutter Hot Restart" },
+		{ "<leader>Fd", "<cmd>FlutterDevices<CR>", desc = "Flutter Devices" },
+		{ "<leader>Fe", "<cmd>FlutterEmulators<CR>", desc = "Flutter Emulators" },
+		{ "<leader>Fc", "<cmd>FlutterToggleDeviceLog<CR>", desc = "Flutter Toggle Device Log" },
+		{ "<leader>Fo", "<cmd>FlutterOutlineToggle<CR>", desc = "Flutter Outline Toggle" },
+	},
 	config = function()
 		require("flutter-tools").setup({
 			ui = {
@@ -39,14 +50,6 @@ return {
 					enableSnippets = true,
 				},
 			},
-			-- debugger = {
-			-- 	enabled = true,
-			-- 	run_via_dap = false,
-			-- },
-			-- dev_log = {
-			--   enabled = true,
-			--   open_cmd = "tabedit", -- command to use to open the log buffer
-			-- },
 		})
 	end,
 }

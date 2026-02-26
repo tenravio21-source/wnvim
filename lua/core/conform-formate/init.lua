@@ -8,9 +8,20 @@ M.setup = function()
 			go = { "gofumpt", "goimports" },
 			rust = { "rustfmt" },
 			dart = { "dart_format" },
+			cpp = { "clang_format" },
+			c = { "clang_format" },
+			typescript = { "prettier" },
+			javascript = { "prettier" },
+			json = { "prettier" },
+			typescriptreact = { "prettier" },
+		},
+		formatters = {
+			clang_format = {
+				prepend_args = { "--style={ColumnLimit: 120}" },
+			},
 		},
 		format_on_save = {
-			timeout_ms = 500,
+			timeout_ms = 1000,
 			lsp_fallback = true,
 		},
 	})

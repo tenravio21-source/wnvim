@@ -1,5 +1,7 @@
 return {
 	"folke/flash.nvim",
+	event = { "BufReadPost", "BufNewFile" },
+	vscode = true,
 	keys = {
 		{
 			"<leader>ss",

@@ -6,10 +6,12 @@ local basic_map = util.basic_map
 -- Disable space in normal mode
 basic_map("n", "<Space>", "<Nop>", "Disable Space")
 
+basic_map("n", "<leader>sc", ":nohlsearch<CR>", "Clear search highlights")
+
 -- Better window navigation (panes) with Ctrl + h/j/k/l
 basic_map("n", "<C-h>", "<C-w>h", "Window Left")
 basic_map("n", "<C-j>", "<C-w>j", "Window Down")
-basic_map("n", "<C-p>", "<C-w>k", "Window Up")
+basic_map("n", "<C-k>", "<C-w>k", "Window Up")
 basic_map("n", "<C-l>", "<C-w>l", "Window Right")
 
 -- Move around in insert mode without leaving
@@ -17,7 +19,8 @@ basic_map("i", "<C-h>", "<Left>", "Move Left in Insert")
 basic_map("i", "<C-j>", "<Down>", "Move Down in Insert")
 basic_map("i", "<C-k>", "<Up>", "Move Up in Insert")
 basic_map("i", "<C-l>", "<Right>", "Move Right in Insert")
-basic_map("i", "<C-b>", "<ESC>^i", "Move to Beginning of Line in Insert")
+basic_map("i", "<C-b>", "<C-o>^", "Move to Beginning of Line")
+basic_map("i", "<C-e>", "<C-o>$", "Move to End of Line")
 
 -- ## ↕️ Move Lines
 basic_map("n", "<leader>j", ":move .+1<CR>==", "Move Line Down")
@@ -34,6 +37,9 @@ basic_map("i", "jk", "<ESC>", "Exit Insert Mode")
 
 -- Clear search highlights with ESC
 basic_map("n", "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
+
+--paste
+basic_map("v", "p", '"_dP', "Paste without overwriting register")
 
 --Search
 basic_map("n", "n", "nzzzv", "Next Search Result (Centered)")

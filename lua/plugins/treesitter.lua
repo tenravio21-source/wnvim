@@ -1,14 +1,32 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		event = { "BufReadPost", "BufNewFile" },
-		config = function()
-			require("nvim-treesitter").setup({
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
-		end,
-	},
+	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
+	config = function()
+		local configs = require("nvim-treesitter")
+
+		configs.setup({
+			ensure_installed = {
+				"json",
+				"lua",
+				"dart",
+				"rust",
+				"go",
+				"markdown",
+				"markdown_inline",
+				"vim",
+				"vimdoc", -- highly recommended for help files
+				"query", -- required for many queries to work
+			},
+
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = false,
+			},
+
+			sync_install = false,
+			auto_install = false,
+		})
+	end,
 }

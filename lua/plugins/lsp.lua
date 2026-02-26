@@ -39,21 +39,11 @@ return {
 
 	{
 		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		priority = 1000,
 		opts = {
 			preset = "modern",
 			transparent_bg = true,
-			add_messages = {
-				display_count = true,
-			},
-			multilines = {
-				enabled = true,
-				always_show = true,
-			},
-			show_source = {
-				enabled = true,
-			},
 		},
 	},
 }
